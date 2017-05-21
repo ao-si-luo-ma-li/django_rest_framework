@@ -19,3 +19,21 @@ class UserViewSet(viewsets.ModelViewSet):
 class EntryVewSet(object):
     queryset = Entry.objects.all()
     serializer_class = EntrySerializer
+
+@api_view(['POST', 'GET'])
+def add_blog(request, *args):
+
+	#1、接收request数据
+	if request.method == 'GET':
+		for j in request.query_params:
+			dict[j] = request.query_params[j]
+		return dict
+	elif request.method == 'POST':
+		for j in request.data:
+			dict[j] = request.data[j]
+		return dict
+
+	# 2、处理数据
+	# 2-1、首先要判断get或post过来的数据是否满足我们的要求，例如缺少字段、类型错误等。
+
+	# 3、返回结果

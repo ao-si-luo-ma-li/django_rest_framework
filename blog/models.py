@@ -21,5 +21,6 @@ class Entry(models.Model):
 	status = models.CharField(choices=STATUS_SET, default=STATUS_DRAFT, max_length=8)
 	author = models.ForeignKey(User, related_name='entries')	
 
-		
+# 可以直接在class中定义属性，这种属性是类属性。
+# 通过该self绑定的是实例属性。	
 		
