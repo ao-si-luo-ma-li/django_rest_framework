@@ -9,13 +9,13 @@ from rest_framework import serializers
 from .models import User, Entry
 
 class UserSerializer(serializers.ModelSerializer):
-	class Meta(object):
+	class Meta:
 		model = User
 		fields = ('name', 'mail')	
 			
 class EntrySerializer(serializers.ModelSerializer):
-	class Meta(object):
-		model = User
+	class Meta:
+		model = Entry
 		fields = ('title', 'body', 'created_at', 'status', 'author')
 		
 # 需要继承serializers.ModelSerializer， fields为API想要得到的字段

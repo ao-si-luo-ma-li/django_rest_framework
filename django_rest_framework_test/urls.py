@@ -16,10 +16,12 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from blog.urls import router as blog_router
+import blog.views as views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'add/', views.add_blog),
+    url(r'addBlog/', views.add_blog),
+    url(r'addUser/', views.add_user),
     #include blog.urls
     url(r'^api/', include(blog_router.urls)),
 ]

@@ -14,6 +14,7 @@ class Entry(models.Model):
 		(STATUS_DRAFT, "草稿"),
 		(STATUS_PUBLIC, "公开"),
 	)
+	
 	title = models.CharField(max_length=128)
 	body = models.TextField()
 	created_at = models.DateTimeField(auto_now_add=True)
